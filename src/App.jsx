@@ -11,7 +11,7 @@ function App() {
   }
   return (
     <div>
-      <input onChange={inputMudou} placeholder='Digite o que vai fazer....'/>
+      <input onChange={inputMudou} placeholder='Digite o que vai fazer....' />
       <button onClick={clickBotao}>Adicionar</button>
 
       <ul>
