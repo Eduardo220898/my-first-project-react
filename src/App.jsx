@@ -1,13 +1,11 @@
+import { useState } from 'react';
 import  {  v4  as  uuidv4  }  from  'uuid' ;
 
 
 function App() {
 
-  const list = [
-    { id: uuidv4(), text: 'Estudar React' },
-    { id: uuidv4(), text: 'Estudar JS' },
-    { id: uuidv4(), text: 'Estudar Inglês' }
-  ]
+  const [list, setList] = useState([{id: uuidv4(), text: 'estudar react'}, {id: uuidv4(), text: 'estudar node'}]);  
+  
 
   function inputMudou(event) {
     console.log(event.target.value)
