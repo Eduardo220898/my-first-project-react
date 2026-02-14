@@ -1,21 +1,26 @@
 import { useState } from 'react';
 import  {  v4  as  uuidv4  }  from  'uuid' ;
+import { Container } from './styles';
+
 
 
 function App() {
 
   const [list, setList] = useState([{id: uuidv4(), text: 'estudar react'}, {id: uuidv4(), text: 'estudar node'}]);  
+   const [imputTask, setImputTask] =useState('');
+
   
 
   function inputMudou(event) {
-    console.log(event.target.value)
+    setImputTask(event.target.value)
   }
 
   function clickBotao() {
-    console.log('Clicou no botão')
+   setList([...list, {id: uuidv4(), text: imputTask}])
+   
   }
   return (
-    <div>
+    <Container>
       <input onChange={inputMudou} placeholder='Digite o que vai fazer....' />
       <button onClick={clickBotao}>Adicionar</button>
 
@@ -26,7 +31,7 @@ function App() {
         ))}
 
       </ul>
-    </div>
+    </Container>
 
 
 
