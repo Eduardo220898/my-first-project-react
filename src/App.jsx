@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import  {  v4  as  uuidv4  }  from  'uuid' ;
-import { Container } from './styles';
+import { Container, ToDoList } from './styles';
 
 
 
@@ -21,6 +21,7 @@ function App() {
   }
   return (
     <Container>
+      <ToDoList>
       <input onChange={inputMudou} placeholder='Digite o que vai fazer....' />
       <button onClick={clickBotao}>Adicionar</button>
 
@@ -31,6 +32,7 @@ function App() {
         ))}
 
       </ul>
+      </ToDoList>
     </Container>
 
 
