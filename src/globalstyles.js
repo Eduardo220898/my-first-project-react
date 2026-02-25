@@ -9,6 +9,9 @@ body{
     outline: none;
 
 }
+*{
+    font-family: "Roboto", sans-serif;
+}
 
 `
 
