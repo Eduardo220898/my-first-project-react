@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import  {  v4  as  uuidv4  }  from  'uuid' ;
-import { Container, ToDoList, Input, Button  } from './styles';
+import { Container, ToDoList, Input, Button, ListItem } from './styles';
 import { FcCheckmark, FcEmptyTrash } from "react-icons/fc";
 
 
@@ -29,11 +29,11 @@ function App() {
       <ul>
 
         {list.map(item => (
-          <div>
+          <ListItem>
            <FcCheckmark />
           <li key={item.id}>{item.text}</li>
           <FcEmptyTrash />
-          </div>
+          </ListItem>
         ))}
 
       </ul>
