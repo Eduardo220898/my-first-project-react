@@ -7,7 +7,7 @@ import { FcCheckmark, FcEmptyTrash } from "react-icons/fc";
 
 function App() {
 
-  const [list, setList] = useState([{id: uuidv4(), text: 'estudar react', finished: true}, {id: uuidv4(), text: 'estudar node'}]);  
+  const [list, setList] = useState([{id: uuidv4(), task: 'estudar react', finished: true}, {id: uuidv4(), task: 'estudar node'}]);  
    const [imputTask, setImputTask] =useState('');
 
   
@@ -17,7 +17,7 @@ function App() {
   }
 
   function clickBotao() {
-   setList([...list, {id: uuidv4(), text: imputTask, finished: false}])
+   setList([...list, {id: uuidv4(), task: imputTask, finished: false}])
    
   }
   return (
@@ -29,9 +29,9 @@ function App() {
       <ul>
 
         {list.map(item => (
-          <ListItem isFinished={item.finished}>
+          <ListItem isFinished={item.finished} key={item.id} >
            <FcCheckmark />
-          <li key={item.id}>{item.text}</li>
+          <li >{item.task}</li>
           <FcEmptyTrash />
           </ListItem>
         ))}
