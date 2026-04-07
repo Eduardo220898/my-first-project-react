@@ -20,6 +20,13 @@ function App() {
    setList([...list, {id: uuidv4(), task: imputTask, finished: false}])
    
   }
+
+  function finalizarTarefa(id) {
+    const newlist = list.map(item => (
+      item.id === id ? {...item,finished: !item.finished} : item 
+    ))
+    setList(newlist)
+  }
   return (
     <Container>
       <ToDoList>
@@ -30,7 +37,7 @@ function App() {
 
         {list.map(item => (
           <ListItem isFinished={item.finished} key={item.id} >
-           <FcCheckmark />
+           <FcCheckmark  onClick={() => finalizarTarefa(item.id)}/>
           <li >{item.task}</li>
           <FcEmptyTrash />
           </ListItem>
