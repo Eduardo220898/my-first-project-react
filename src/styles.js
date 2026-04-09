@@ -49,6 +49,12 @@ color: white;
 cursor: pointer;
 width: 100px;
 
+&:hover{
+    opacity:0.8; 
+}
+&:active{
+    opacity:0.6; 
+}
 
 `
 export const ListItem = styled.div`

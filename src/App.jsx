@@ -7,7 +7,7 @@ import { Container, ToDoList, Input, Button, ListItem, CheckIcon, DeleteIcon } f
 
 function App() {
 
-  const [list, setList] = useState([{ id: uuidv4(), task: 'estudar react', finished: true }, { id: uuidv4(), task: 'estudar node' }]);
+  const [list, setList] = useState([]);
   const [imputTask, setImputTask] = useState('');
 
 
@@ -17,7 +17,9 @@ function App() {
   }
 
   function clickBotao() {
-    setList([...list, { id: uuidv4(), task: imputTask, finished: false }])
+    if (imputTask){
+       setList([...list, { id: uuidv4(), task: imputTask, finished: false }])
+    }
 
   }
 
