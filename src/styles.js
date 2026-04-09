@@ -1,4 +1,5 @@
 import styled from "styled-components"; 'styled-components';
+import { FcCheckmark, FcEmptyTrash } from "react-icons/fc";
 
 export const Container = styled.div`
 
@@ -69,4 +70,9 @@ li{
 list-style: none;
 }
 `
-
+export const CheckIcon = styled(FcCheckmark)`
+cursor: pointer;
+`
+export const DeleteIcon = styled(FcEmptyTrash)`
+cursor: pointer;
+`
